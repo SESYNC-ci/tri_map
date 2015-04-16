@@ -64,11 +64,12 @@
     <span style='background:#A50026; opacity:.6;'>95-100</span>
 </div>
 
-<div class="row">
+
+<div class="row" style="position:absolute; height:100%; width:100%">
 <div id='map'></div>
 </div>
 
-<div class="row">
+<div class="row" style="height:250px; width:100%">
 <div>
   <strong>Log of Total 2009 Toxic Release Contribution per Facility</strong>
  	<div class='col-md-2' id="pcontribution-chart" style="width:700px; height:700px;">
@@ -153,6 +154,9 @@ pcontributionchart.width(1600)
         .xUnits(function(){return 100;})
         .on("filtered", onFilt)
         ;
+
+AddYAxis(pcontributionchart, "# of Facilities");
+AddXAxis(pcontributionchart, "Log of Total Toxic Contribution");
 
 dc.renderAll();
 
